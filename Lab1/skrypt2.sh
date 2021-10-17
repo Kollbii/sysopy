@@ -15,15 +15,22 @@ fi
 SECRET=$(($((RANDOM%$(($2-$1)))) + $1))
 # echo $SECRET
 
+CNT=1
 read GUESS
 while [ $GUESS -ne $SECRET ]
 do
-	if [ $GUESS -lt $SECRET ]; then
-		echo "Higher!"
+	if [ $CNT -lt 10 ]; then
+		if [ $GUESS -lt $SECRET ]; then
+			echo "Higher!"
+		else
+			echo "Lower..." 
+		fi
+		CNT=$(($CNT + 1))
+		read GUESS
 	else
-		echo "Lower..." 
+		echo "To much guesess.... [Current limit 10]"
+		exit 1
 	fi
-	read GUESS
 done
 
 echo "You won! The secret number was $SECRET"
