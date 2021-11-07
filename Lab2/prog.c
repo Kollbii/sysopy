@@ -42,7 +42,6 @@ int main()
 		dynamic_global[4] = 3;
 		dynamic_local[4] = 4;
 		printf("DynLoc: %d, DynGlob: %d", dynamic_local[4], dynamic_global[4]);
-
 	}
 	else { // parent process
 		// parent will wait for child to complete
