@@ -16,4 +16,4 @@ if [ ! -d $1 ]; then
 	exit 1
 fi
 
-sudo find $1 -type f -size +$2c -printf "%T@ %p\n" | sort -n | cut -d' ' -f2 | tail -n 1
+find $1 -type f -size +$2c -printf "%T@ %p\n" | sort -n | cut -d' ' -f2 | tail -n 1

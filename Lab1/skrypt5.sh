@@ -5,8 +5,21 @@
 # $ ./skrypt05.sh a b 1 2
 # 2 1 b a
 
-for (( i=$(($#)); i > 0; i-- )); do
-	# echo ${!i}
+if [ $# = 0 ]; then
+	echo "You have to put at least 1 element"
+	exit
+fi
+
+RET=""
+
+# for i; do
+# 	RET="$i $RET"
+# done
+
+# ^ Nice alternatywa ^
+
+for ((i=$#; $i > 0; i--)); do
 	RET=$(echo "$RET ${!i}")
 done
+
 echo $RET
