@@ -16,7 +16,7 @@ RET=""
 # 	RET="$i $RET"
 # done
 
-# ^ Nice alternatywa ^
+# ^ Nice alternatywa ^ #
 
 for ((i=$#; $i > 0; i--)); do
 	RET=$(echo "$RET ${!i}")
