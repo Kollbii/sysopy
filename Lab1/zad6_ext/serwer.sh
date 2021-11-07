@@ -44,15 +44,6 @@ for ((i=0; i < $PLAYERS; i++)); do
 			elif [[ $CURRENT = 2 && $COMPARED = 1 ]]; then
 				echo "	Player$i won" >> gra.log
 				SCORE1=$(($SCORE1+1))
-			elif [[ $CURRENT = 2 && $COMPARED = 0 ]]; then
-				echo "	Player$j won" >> gra.log
-				SCORE2=$(($SCORE2+1))
-			elif [[ $CURRENT = 0 && $COMPARED = 1 ]]; then
-				echo "	Player$j won" >> gra.log
-				SCORE2=$(($SCORE2+1))
-			elif [[ $CURRENT = 1 && $COMPARED = 2 ]]; then
-				echo "	Player$j won" >> gra.log
-				SCORE2=$(($SCORE2+1))
 			else 
 				echo "	Draw" >> gra.log
 			fi
