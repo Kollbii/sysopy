@@ -2,9 +2,14 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <signal.h>
+#include <string.h>
+#include <stdlib.h>
+#include <ctype.h>
+
 
 void capture_sig(int sig){
-    printf("Got signal %d\n", sig);
+    char *str = strdup(sys_siglist[sig]);
+    printf("Got signal %s -> %d\n", str, sig);
 
     // Exception for sigkill and sigstop
     if (signal(sig, capture_sig) == SIG_ERR){

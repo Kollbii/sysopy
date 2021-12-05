@@ -1,2 +1,1 @@
 Some text of CHILD PROCESS
-PARENT PROCESS text

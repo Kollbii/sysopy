@@ -25,6 +25,7 @@ int main()
 	// fork a child process
 	pid = fork();
 
+	printf("DynLoc: %d, DynGlob: %d\n", dynamic_local[4], dynamic_global[4]);
 
 	if (pid < 0) { // error occurred
 		fprintf(stderr, "Fork Failed");
@@ -42,6 +43,7 @@ int main()
 		dynamic_global[4] = 3;
 		dynamic_local[4] = 4;
 		printf("DynLoc: %d, DynGlob: %d", dynamic_local[4], dynamic_global[4]);
+
 	}
 	else { // parent process
 		// parent will wait for child to complete
@@ -51,10 +53,12 @@ int main()
 		fputs("PARENT PROCESS text\n", fileptr);
 		printf("My (Parent) PID: %d\n", getpid());
 		printf("Child PID: %d\n", pid);
-		printf("Child Complete");
+		printf("Child Complete\n");
+		printf("DynLoc: %d, DynGlob: %d\n", dynamic_local[4], dynamic_global[4]);
+
 		dynamic_global[4] = 99;
 		dynamic_local[4] = 98;
-		printf("DynLoc: %d, DynGlob: %d", dynamic_local[4], dynamic_global[4]);
+		printf("DynLoc: %d, DynGlob: %d\n", dynamic_local[4], dynamic_global[4]);
 
 	}
 

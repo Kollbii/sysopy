@@ -6,11 +6,8 @@ int main(void){
 
     pid_t   pid;
 
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++){ // while(1){
         pid = fork();
-        if (pid == 0){
-            pid = fork();
-        }
         printf("Pid no.: %d\n", pid);
     }
 
