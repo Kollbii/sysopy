@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "*.yml": "ansible",
-        "string.h": "c"
-    }
-}
